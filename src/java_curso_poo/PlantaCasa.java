@@ -20,11 +20,23 @@ public class PlantaCasa {
         System.out.println("A casa foi pintada na Cor:" + cor);
     }
 
+    public void mudarCorParede(String novacor){
+        cor = novacor;
+        pintar();
+    }
+
     public int somarMetragem (){
         return  metragem * numeroBanheiro + numeroQuartos;
 
     }
 
+    public void alterarCaracteristicas(int metros, int quartos, int banheiros, String mat) {
+        metragem = metros;
+        numeroQuartos = quartos;
+        numeroBanheiro = banheiros;
+        material = mat;
+        construir();
+    }
 
 
 
@@ -40,10 +52,32 @@ public class PlantaCasa {
 
         casa.construir();
 
+        System.out.println(" /////////////////////////////////////////////////////////////" );
+
         casa.pintar();
+
+        casa.mudarCorParede("Branco");
+
+        System.out.println(" /////////////////////////////////////////////////////////////" );
+
+        casa.alterarCaracteristicas(100, 2, 2, "Refestimento");
+
 
         int resultado = casa.somarMetragem();
         System.out.println("A metragem e: " + resultado + " metros" );
+
+        System.out.println(" =========== CASA DO VIZINHO ================" );
+
+        PlantaCasa casaVizinho = new PlantaCasa();
+        casaVizinho.metragem = 200;
+        casaVizinho.material = "Alvenaria";
+        casaVizinho.numeroBanheiro = 1;
+        casaVizinho.numeroQuartos = 1;
+        casaVizinho.cor = "Amarela";
+
+        casaVizinho.construir();
+        casaVizinho.pintar();
+
 
 
     }
