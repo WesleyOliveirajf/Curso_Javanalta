@@ -2,9 +2,9 @@ package java_curso_poo;
 
 public class PlantaCasa {
     // Atributos
-    int metragem;
-    int numeroQuartos;
-    int numeroBanheiro;
+    public int  metragem;
+    public int numeroQuartos;
+    public int numeroBanheiro;
     String cor;
     String material;
 
@@ -19,6 +19,36 @@ public class PlantaCasa {
     public void pintar (){
         System.out.println("A casa foi pintada na Cor:" + cor);
     }
+
+    public int somarMetragem (){
+        return  metragem * numeroBanheiro + numeroQuartos;
+
+    }
+
+
+
+
+    public static void main(String[] args) {
+        // Criando o Objeto
+        PlantaCasa casa = new PlantaCasa();
+
+        casa.numeroBanheiro = 2;
+        casa.numeroQuartos = 3 ;
+        casa.metragem = 70;
+        casa.material = "Tijolo";
+        casa.cor = "Cinza";
+
+        casa.construir();
+
+        casa.pintar();
+
+        int resultado = casa.somarMetragem();
+        System.out.println("A metragem e: " + resultado + " metros" );
+
+
+    }
+
+
 
 
 
